@@ -1,178 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <title>Zi-Yi Dou</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <title>Zi-Yi Dou</title>
+    <style type="text/css">
+body{margin:0;padding:0;background-color:#eee;}
+a{color:#4e613e}
+a:hover{color:#566c7f}
+#background{position:fixed;top:0;overflow:hidden;height:0}
+#wave-canvas{display:block;position:relative;top:0;left:5%;width:55%;min-width:1000px;height:150px;border:0}
+#main{z-index:2;margin:0 auto;position:absolute;top:5%;width:100%;min-width:1000px;text-align:center;}
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+#main-content{background:rgba(238,238,238,0.95);padding:0;text-align:center;cursor:default;text-align:center;}
+/*#main-content{margin-left:6.5104167%;width:86.9791667%;}
+@media (min-width: 768px) {
+    #main-content{width:66%;min-width:668px;margin-left:50px}
+}
+@media (min-width: 1200px) {
+    #main-content{width:66%;max-width:1200px;margin-left:100px}
+}*/
+/*#main-content {
+    width:86.9791667%;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    #main-content{width:66%;min-width:668px;}
+}
+@media (min-width: 1200px) {
+    #main-content{width:66%;max-width:900px;}
+}*/
+/* Avatar, Name, etc. */
+/*#main-content-container{margin:0 auto;padding:15px 0em 15px 0em;max-width:1080px;}
+@media (min-width: 768px) {
+    #main-content-container{padding:15px 0 15px 2em;}
+}
+#main-content-container .col-avatar{text-align:center}
+@media (min-width: 768px) {
+    #main-content-container .col-avatar{text-align:right}
+}*/
+#main-content-container .col-avatar .avatar{z-index:100;width:150px;height:150px;margin-top:0px;border-radius:100%;box-shadow:0 0 0 0.3em #fff;opacity:1;}
 
-  <!-- Custom styles for this template -->
-  <link href="css/small-business.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/all.css" />
-  <link rel="stylesheet" href="css/academicons.css" />
-  <style type="text/css">
-    .content {
-      margin-top: 0;
-      margin-bottom: 0
-    }
-  </style>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-  <meta name="google-site-verification" content="qEih9m0y-6X0QuisQYfHSxOvkW-o5Q3dfxuQ5Z4JtGA" />
+#main-content-container .col-info{height:100%;align-items:center;display:-webkit-flex;height:150px}
+#main-info-container{padding-top:15px}
+#main-info-container .col-name{text-align:center}
+#main-info-container .col-name .textbox-info{display:inline-block;margin:0 auto;text-align:left}
+#main-info-container .col-name .name{margin:0;color:#566c7f;font-size:1.85em;font-family:"Source Sans Pro",Helvetica,sans-serif}
+#main-info-container .col-name .email{color:#666; font-size:14px}
+#main-info-container .col-link{text-align:center;margin:-5px 0 -25px;}
+#main-info-container .col-link ul {margin:0px auto auto;padding:0;list-style:none;text-align:center}
+#main-info-container .col-link li {display:inline-block;margin:auto;padding:0 10px;color:#ccc;line-height:10px}
+#main-info-container .col-link li a{width:45px;height:45px;color:#ccc;padding:0;font-size:45px;line-height:45px}
+#main-info-container .col-link li a:focus,
+#main-info-container .col-link li a:hover{text-decoration:none;cursor:hand}
+#main-info-container .col-link li a.border{border:1px solid #ccc;border-radius:100%;}
+#main-info-container .col-link li a.padding{padding:0px 0px;font-size:22px}
 
+/* Other */
+#main-more-container{background:#ffffff;width:100%;padding:0 30px}
+
+#main-bio-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px;font-size:1rem;line-height:1.4}
+#main-bio-container .subtitle{margin-top:30px;color:#566c7f}
+
+#main-rest-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:00px;max-width:1080px;font-size:1rem;line-height:1.4}
+#main-rest-container .subtitle{margin-top:30px;color:#566c7f}
+
+#main-pub-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px}
+#main-pub-container .subtitle{color:#566c7f;}
+#main-pub-container .subtitle a {font-weight:400;font-size:18px}
+#main-pub-container .subtitle a.activated {color:#333333}
+#main-pub-container .subtitle a.activated:focus,
+#main-pub-container .subtitle a.activated:hover {text-decoration:none;cursor:initial}
+#main-pub-container .move-up {margin-top:-0.3cm}
+#main-pub-container .move-up-more {margin-top:-0.6cm}
+#main-pub-container .move-down {margin-top:0.8cm}
+
+#main-pub-container .subtitle-aux {font-size:1rem}
+#main-pub-container .subtitle-aux a.activated {color:#333333}
+#main-pub-container .subtitle-aux a.activated:focus,
+#main-pub-container .subtitle-aux a.activated:hover {text-decoration:none;cursor:initial}
+#main-pub-container .subtitle-aux .note{margin-left:1em;color:#999999;text-decoration:none;font-size:14px}
+
+#main-pub-card-container{}
+#main-pub-card-container>h5{margin-bottom: 20px}
+#main-pub-card-container .pub-card{width: 100%;padding-bottom:5px;font-size:1rem}
+#main-pub-card-container .pub-card .col-l{text-align:center;padding-top:5px}
+#main-pub-card-container .pub-card .col-r{padding-top:5px}
+#main-pub-card-container .pub-card img{width:100%;margin:0 auto}
+#main-pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:40px}
+#main-pub-card-container .pub-card .title{font-weight:600;font-size:1rem;margin-bottom:4px;line-height:1.4}
+#main-pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:4px;line-height:1.4}
+#main-pub-card-container .pub-card .authors a{color:#666666}
+#main-pub-card-container .pub-card .authors u{color:#333333;font-weight:600;text-decoration:none}
+#main-pub-card-container .pub-card .conference{color:#333333;font-weight:600}
+#main-pub-card-container .pub-card .note{display:block;color:#999999;text-decoration:none;font-size:12px}
+#main-pub-card-container .pub-card .info{margin-bottom:0;}
+#main-pub-card-container .row{margin:0}
+#main-pub-card-container .col-l,
+#main-pub-card-container .col-r{vertical-align:top;display:inline-block;margin:0;padding-left:0px}
+
+#footer{padding:1.5em 0 1.5em;min-width:1080px;background:#f4f4f4;opacity:0.95;font-size:14px;line-height:12px;text-align:left}
+#footer .container{max-width:1080px;padding:0 45px}
+#footer .row{align-items:center}
+#footer .stat{width:90px;overflow:hidden;margin:0 auto;padding:0 15px;}
+#footer .copyright{flex-grow:1;margin:5px auto 5px;text-align:left;display:block;font-size:14px;line-height:1.4}
+#footer a{color:#666666}
+#footer a:hover{color:#333333}
+
+.bold{font-weight:600}
+.highlight{color:#BB2222;font-weight:600}
+.highlight:hover{color:#BB2222;font-weight:600}
+.hide{display:none}
+.custom-padding {
+    padding-left: 40px;
+}
+    </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item active">
-              <a class="nav-link" href="">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li> -->
-          
-          <!--<li class="nav-item">
-            <a class="nav-link" href="files/cv.pdf">CV</a>
-          </li>-->
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div id="main">
+    <!--canvas id="wave-canvas"></canvas-->
 
-  <!-- Page Content -->
-  <div class="container">
+    <div id="main-content">
+        <div id="main-content-container" class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-3 col-avatar">
+                <img src="data/ziyi.jpg" class="avatar" />
+            </div>
+            <div class="col-sm-12 col-md-9 col-info">
+                <div id="main-info-container" class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xl-6 col-name">
+                            <div class="textbox-info">
+                                <h1 class="name"><span>Zi-Yi Dou</span></h1>
+                                <p class="email">Email: zdou [at] cs [dot] ucla [dot] edu  </p>
+                                <p><a href="https://scholar.google.com/citations?user=RWogNsEAAAAJ&hl=en&oi=ao">[Google Scholar]</a> <a href="https://github.com/zdou0830">[GitHub]</a> <a href="data/CV.pdf">[Curriculum Vitae]</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Heading Row -->
-    <div class="row my-4">
-      <div class="col-lg-12">
-        <h1>Zi-Yi Dou</h1>
-        <p>Email: zdou [at] cs [dot] ucla [dot] edu </p>
-      <p><a href="https://scholar.google.com/citations?user=RWogNsEAAAAJ&hl=en&oi=ao">[Google Scholar]</a> <a href="https://github.com/zdou0830">[GitHub]</a>  </p>
-        <p class=" m-0">I am a Ph.D. student at the University of California, Los Angeles in <span style="color:#4169E1"><a
-              href="https://www.cs.ucla.edu/">Computer Science</a></span>. I am fortunate to be advised by Prof. <span
-            style="color:#4169E1"><a href="https://vnpeng.net/">Nanyun (Violet) Peng</a></span>. My research is generously supported by Amazon PhD Fellowship.
-        <p></p>
-      </div>
-      <!-- /.col-md-4 -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Call to Action Well -->
-    <div class=" my-4 text-left">
-      <h2>Publications </h2>
-      <!--<p> <strong> Preprint</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>*, Aishwarya Kamath*, Zhe Gan*, Pengchuan Zhang, Jianfeng Wang, Linjie Li, Zicheng Liu, Ce Liu, Yann LeCun, Nanyun Peng, Jianfeng Gao and Lijuan Wang, <a href="https://arxiv.org/abs/2206.07643"><em>Coarse-to-Fine Vision-Language Pre-training with Fusion in the Backbone</em></a>, arXiv, 2022. </li>
-      </ul> -->
-      <p> <strong> 2023</strong> </p>
-      <ul>
-        <li> Liunian Harold Li*, <strong>Zi-Yi Dou</strong>*, Nanyun Peng and Kai-Wei Chang, <a href="https://arxiv.org/abs/2306.14060"><em>DesCo: Learning Object Recognition with Rich Language Descriptions</em></a>, Conference on Neural Information Processing Systems (NeurIPS), 2023. <p><a href="https://www.omnilabel.org/" style="color:#FF0000">CVPR 2023 OmniLabel Challenge Winner (1st place)</a></p> </li>
-      </ul>
-      <ul>
-        <li> Xueyan Zou*, <strong>Zi-Yi Dou</strong>*, Jianwei Yang*, Zhe Gan, Linjie Li, Chunyuan Li, Xiyang Dai, Harkirat Behl, Jianfeng Wang, Lu Yuan, Nanyun Peng, Lijuan Wang, Yong Jae Lee and Jianfeng Gao, <a href="https://x-decoder-vl.github.io/"><em>Generalized Decoding for Pixel, Image, and Language</em></a>, Conference on Computer Vision and Pattern Recognition (CVPR), 2023. </li>
-      </ul>
-      <p> <strong> 2022</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>*, Aishwarya Kamath*, Zhe Gan*, Pengchuan Zhang, Jianfeng Wang, Linjie Li, Zicheng Liu, Ce Liu, Yann LeCun, Nanyun Peng, Jianfeng Gao and Lijuan Wang, <a href="https://ashkamath.github.io/FIBER_page/"><em>Coarse-to-Fine Vision-Language Pre-training with Fusion in the Backbone</em></a>, Conference on Neural Information Processing Systems (NeurIPS), 2022. </li>
-        <li> <strong>Zi-Yi Dou</strong> and Nanyun Peng, <a href="https://arxiv.org/abs/2206.04294"><em>FOAM: A Follower-aware Speaker Model for Vision-and-Language Navigation</em></a>, Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2022. </li>
-        <li> <strong>Zi-Yi Dou</strong>, Yichong Xu, Zhe Gan, Jianfeng Wang, Shuohang Wang, Lijuan Wang, Chenguang Zhu, Nanyun Peng, Zicheng Liu and Michael Zeng, <a href="https://arxiv.org/abs/2111.02387"><em>An Empirical Study of Training End-to-End Vision-and-Language Transformers</em></a>, Conference on Computer Vision and Pattern Recognition (CVPR), 2022.  </li>
-        <li> <strong>Zi-Yi Dou</strong> and Nanyun Peng, <a href="https://arxiv.org/abs/2201.00136"><em>Zero-shot Commonsense Question Answering with Cloze Translation and Consistency Optimization</em></a>, AAAI Conference on Artificial Intelligence (AAAI), 2022. </li>
-      </ul>
-      <p> <strong> 2021</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong> and Nanyun Peng, <a href="https://aclanthology.org/2021.emnlp-main.513/"><em>Improving Pre-trained Vision-and-Language Embeddings for Phrase Grounding</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2021. </li>
-        <li> Pengfei Liu, Jinlan Fu, Yang Xiao, Weizhe Yuan, Shuaicheng Chang, Junqi Dai, Yixin Liu, Zihuiwen Ye, <strong>Zi-Yi Dou</strong> and Graham Neubig, <a href="https://arxiv.org/abs/2104.06387"><em>Explainaboard: An Explainable Leaderboard for NLP</em></a>, Conference of the Association for Computational Linguistics (ACL) Demonstrations, 2021. </li>
-        <li> <strong>Zi-Yi Dou</strong> and Graham Neubig, <a href="https://arxiv.org/abs/2101.08231"><em>Word Alignment by Fine-tuning Embeddings on Parallel Corpora</em></a>, Conference of the European Chapter of the Association for Computational Linguistics (EACL), 2021. </li>
-        <li> <strong>Zi-Yi Dou</strong>, Pengfei Liu, Hiroaki Hayashi, Zhengbao Jiang and Graham Neubig, <a href="https://arxiv.org/abs/2010.08014"><em>GSum: A General Framework for Guided Neural Abstractive Summarization</em></a>, Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2021. </li>
-        <li> Yixin Liu, <strong>Zi-Yi Dou</strong>, and Pengfei Liu, <a href="https://arxiv.org/abs/2104.07210"><em>RefSum: Refactoring Neural Summarization</em></a>, Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2021. </li>
-        <li> <strong>Zi-Yi Dou</strong>, Anamika Barman-Adhikari, Fei Fang and Amulya Yadav, <a href="http://amulyayadav.com/Papers/aaai21fb.pdf"><em>Harnessing Social Media to Identify Homeless Youth At-Risk of Substance Use</em></a>, AAAI Conference on Artificial Intelligence (AAAI), 2021.</li>
-      </ul>
-      <p> <strong> 2020</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>, Antonios Anastasopoulos and Graham Neubig, <a href="https://arxiv.org/abs/2004.03672"><em>Dynamic Data Selection and Weighting for Iterative Back-Translation</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2020.  </li>
-        <li> Yiran Chen, Pengfei Liu, Ming Zhong, <strong>Zi-Yi Dou</strong>, Danqing Wang, Xipeng Qiu and Xuanjing Huang, <a href="https://arxiv.org/abs/2010.05139"><em>CDEvalSumm: An Empirical Study of Cross-Dataset Evaluation for Neural Summarization Systems</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings, 2020. </li>
-        <li> Antonios Anastasopoulos, Alessandro Cattelan, <strong>Zi-Yi Dou</strong>, Marcello Federico, Christian Federman, Dmitriy Genzel, Francisco Guzmán, Junjie Hu, Macduff Hughes, Philipp Koehn, Rosie Lazar, Will Lewis, Graham Neubig, Mengmeng Niu, Alp Öktem, Eric Paquin, Grace Tang and Sylwia Tur, <a href="https://arxiv.org/abs/2007.01788"><em>TICO-19: the Translation Initiative for COvid-19</em></a>, EMNLP Workshop on NLP-COVID, 2020. </li>
-        <li> <strong>Zi-Yi Dou</strong>, Sachin Kumar and Yulia Tsvetkov, <a href="https://arxiv.org/abs/2006.15454"><em>A Deep Reinforced Model for Zero-Shot Cross-Lingual Summarization with Bilingual Semantic Similarity Rewards</em></a>, ACL Workshop on Neural Generation and Translation, 2020. </li>
-      </ul>
-      <p> <strong> 2019</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>, Junjie Hu, Antonios Anastasopoulos and Graham Neubig, <a href="https://arxiv.org/abs/1908.10430"><em>Unsupervised Domain Adaptation for Neural Machine Translation with Domain-Aware Feature Embeddings</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019.</li>
-        <li> <strong>Zi-Yi Dou</strong>, Keyi Yu and Antonios Anastasopoulos, <a href="https://arxiv.org/abs/1908.10423"><em>Investigating Meta-Learning Algorithms for Low-Resource Natural Language Understanding Tasks</em></a>,  Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019.</li>
-        <li> <strong>Zi-Yi Dou</strong>, Xinyi Wang, Junjie Hu and Graham Neubig, <a href="https://arxiv.org/abs/1910.02555"><em>Domain Differential Adaptation for Neural Machine Translation</em></a>, EMNLP Workshop on Neural Generation and Translation, 2019. </li>
-        <li> Graham Neubig, <strong>Zi-Yi Dou</strong>, Junjie Hu, Paul Michel, Danish Pruthi, Xinyi Wang and John Wieting, <a href="https://arxiv.org/abs/1903.07926"><em>compare-mt: A Tool for Holistic Comparison of Language Generation Systems</em></a>, Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2019.<p style="color:#FF0000">Best Demo Runner-up</p> </li>
-        <li> Jian Li, Baosong Yang, <strong>Zi-Yi Dou</strong>, Xing Wang, Michael R. Lyu and Zhaopeng Tu, <a href="https://arxiv.org/abs/1904.03100"><em>Information Aggregation for Multi-Head Attention</em></a>, Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2019. </li>
-        <li> <strong>Zi-Yi Dou</strong>, Zhaopeng Tu, Xing Wang, Longyue Wang, Shuming Shi and Tong Zhang, <a href="https://ojs.aaai.org/index.php/AAAI/article/view/3772"><em>Dynamic Layer Aggregation for Neural Machine Translation with Routing-by-Agreement</em></a>, AAAI Conference on Artificial Intelligence (AAAI), 2019. </li>
-      </ul>
-      <p> <strong> 2018</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>, Zhaopeng Tu, Xing Wang, Shuming Shi and Tong Zhang, <a href="https://arxiv.org/abs/1810.10181"><em>Exploiting Deep Representations for Neural Machine Translation</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2018</li>
-        <li> <strong>Zi-Yi Dou</strong>, Zhi-Hao Zhou and Shujian Huang, <a href="https://aclanthology.org/D18-1062/"><em>Unsupervised Bilingual Lexicon Induction via Latent Variable Models</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2018. </li>
-        <li> Xin Wang, Fisher Yu, <strong>Zi-Yi Dou</strong>, Trevor Darrel and Joseph E. Gonzalez, <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Xin_Wang_SkipNet_Learning_Dynamic_ECCV_2018_paper.html"><em>SkipNet: Learning Dynamic Routing in Convolutional Networks</em></a>, European Conference on Computer Vision (ECCV), 2018. </li>
-      </ul>
-      <p> <strong> 2017</strong> </p>
-      <ul>
-        <li> <strong>Zi-Yi Dou</strong>, <a href="https://aclanthology.org/D17-1054/"><em>Capturing User and Product Information for Document-Level Sentiment Analysis with Deep Memory Networks</em></a>, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2017. </li>
-      </ul>
-    </div>
-    <div class=" my-4 text-left">
-      <h2>Education</h2>
-      <ul>
-        <li> Ph.D. Student in Computer Science. University of California, Los Angeles. Aug. 2021 - Present </li>
-        <li> Ph.D. Student in Computer Science (Transferred). University of Southern California. Aug. 2020 - Aug. 2021 </li>
-        <li> M.S. in Language Technologies. Carnegie Mellon University. Aug. 2018 - Aug. 2020 </li>
-        <li> B.S. in Computer Science, Minor in Statistics. Nanjing University. Sep. 2014 - Jul. 2018 </li>
-      </ul>
+        </div>
     </div>
 
-    <div class=" my-4 text-left">
-      <h2>Experience</h2>
-      <ul>
-        <li> Meta AI Research Intern, Jun. 2023 - Sep. 2023 </li>
-        <li> Microsoft Research Intern, Jun. 2022 - Sep. 2022 </li>
-        <li> Microsoft Research Intern, May. 2021 - Aug. 2021 </li>
-        <li> Tencent AI Lab Research Intern, Feb. 2018 - Aug. 2018 </li>
-      </ul>
+    <div id="main-more-container">
+        <div id="main-bio-container">
+            <p>
+                I am a Ph.D. student at the University of California, Los Angeles in <span style="color:#4169E1"><a
+                    href="https://www.cs.ucla.edu/">Computer Science</a></span>. I am fortunate to be advised by Prof. <span
+                  style="color:#4169E1"><a href="https://vnpeng.net/">Nanyun (Violet) Peng</a></span>. My current research is focused on vision-language learning and embodied learning. I am a recipient of the Amazon PhD Fellowship.
+            </p>
+
+        </div>
+
+        <div id="main-pub-container">
+            <h5 class="subtitle">Publications
+            (
+                <a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();">show selected</a> /
+                <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all by date</a> /
+                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopic();">show all by topic</a>
+            )
+            </h5>
+            <p class="subtitle-aux"><span class="bold">Topics:</span>
+                <a href="#topic-multimodal" onClick="return publicationByTopicSpecific(this)" data-topic="multimodal">Multimodal Learning</a> /
+                <a href="#topic-nlp" onClick="return publicationByTopicSpecific(this)" data-topic="nlp">Natural Language Processing</a> /
+                <a href="#topic-eval" onClick="return publicationByTopicSpecific(this)" data-topic="eval">Model Evaluation</a>
+                <br><span class="note">(* indicates equal contribution)</span>
+            </p>
+            <div id="main-pub-card-container" class="hide">
+                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/figures/desco.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2306.14060">DesCo: Learning Object Recognition with Rich Language Descriptions</h5>
+                                <h6 class="authors">
+                                    <a>Liunian Harold Li*</a>,
+                                    <u>Zi-Yi Dou*</u>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Kai-Wei Chang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NeurIPS 2023</span>
+                                <a href="https://www.omnilabel.org/" style="color:#FF0000">CVPR 2023 OmniLabel Challenge Winner (1st place)</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/figures/x-decoder.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://x-decoder-vl.github.io/">Generalized Decoding for Pixel, Image, and Language</a></h5>
+                                <h6 class="authors">
+                                    <a>Xueyan Zou*</a>,
+                                    <u>Zi-Yi Dou*</u>,
+                                    <a>Jianwei Yang*</a>,
+                                    <a>Zhe Gan</a>,
+                                    <a>Linjie Li</a>,
+                                    <a>Chunyuan Li</a>,
+                                    <a>Xiyang Dai</a>,
+                                    <a>Harkirat Behl</a>,
+                                    <a>Jianfeng Wang</a>,
+                                    <a>Lu Yuan</a>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Lijuan Wang</a>,
+                                    <a>Yong Jae Lee</a>,
+                                    <a>Jianfeng Gao</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">CVPR 2023</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/x-decoder-vl.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2305.14268">Masked Path Modeling for Vision-and-Language Navigation</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Feng Gao</a>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP-Findings 2023</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/x-decoder-vl.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a>ACQUIRED: A Dataset for Answering Counterfactual Questions In Real-Life Videos</a></h5>
+                                <h6 class="authors">
+                                    <a>Te-Lin Wu*</a>,
+                                    <u>Zi-Yi Dou*</u>,
+                                    <a>Qingyuan Hu*</a>,
+                                    <a>Yu Hou</a>,
+                                    <a>Nischal Reddy Chandra</a>,
+                                    <a>Marjorie Freedman</a>,
+                                    <a>Ralph M. Weischedel</a>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2023</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="eval" data-year="2023" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/x-decoder-vl.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2305.14268">Gender Biases in Automatic Evaluation Metrics: A Case Study on Image Captioning</a></h5>
+                                <h6 class="authors">
+                                    <a>Haoyi Qiu</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Tianlu Wang</a>,
+                                    <a>Asli Celikyilmaz</a>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2023</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2022" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/figures/fiber.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://ashkamath.github.io/FIBER_page/">Coarse-to-Fine Vision-Language Pre-training with Fusion in the Backbone</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou*</u>,
+                                    <a>Aishwarya Kamath*</a>,
+                                    <a>Zhe Gan*</a>,
+                                    <a>Pengchuan Zhang</a>,
+                                    <a>Jianfeng Wang</a>,
+                                    <a>Linjie Li</a>,
+                                    <a>Zicheng Liu</a>,
+                                    <a>Ce Liu</a>,
+                                    <a>Yann LeCun</a>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Jianfeng Gao</a>,
+                                    <a>Lijuan Wang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NeurIPS 2022</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2022" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/vision-language.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2206.04294">FOAM: A Follower-aware Speaker Model for Vision-and-Language Navigation</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NAACL 2022</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2022" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/vision-language.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2111.02387">An Empirical Study of Training End-to-End Vision-and-Language Transformers</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Yichong Xu</a>,
+                                    <a>Zhe Gan</a>,
+                                    <a>Jianfeng Wang</a>,
+                                    <a>Shuohang Wang</a>,
+                                    <a>Lijuan Wang</a>,
+                                    <a>Chenguang Zhu</a>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Zicheng Liu</a>,
+                                    <a>Michael Zeng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">CVPR 2022</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2022" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/vision-language.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2201.00136">Zero-shot Commonsense Question Answering with Cloze Translation and Consistency Optimization</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">AAAI 2022</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2021" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/vision-language.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://aclanthology.org/2021.emnlp-main.513/">Improving Pre-trained Vision-and-Language Embeddings for Phrase Grounding</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="eval" data-year="2021" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/leaderboard.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2104.06387">Explainaboard: An Explainable Leaderboard for NLP</a></h5>
+                                <h6 class="authors">
+                                    <a>Pengfei Liu</a>,
+                                    <a>Jinlan Fu</a>,
+                                    <a>Yang Xiao</a>,
+                                    <a>Weizhe Yuan</a>,
+                                    <a>Shuaicheng Chang</a>,
+                                    <a>Junqi Dai</a>,
+                                    <a>Yixin Liu</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">ACL 2021 Demo</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/word-alignment.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2101.08231">Word Alignment by Fine-tuning Embeddings on Parallel Corpora</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EACL 2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/gsum.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2010.08014">GSum: A General Framework for Guided Neural Abstractive Summarization</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Pengfei Liu</a>,
+                                    <a>Hiroaki Hayashi</a>,
+                                    <a>Zhengbao Jiang</a>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NAACL 2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/refsum.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2104.07210">RefSum: Refactoring Neural Summarization</a></h5>
+                                <h6 class="authors">
+                                    <a>Yixin Liu</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Pengfei Liu</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NAACL 2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/social-media.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="http://amulyayadav.com/Papers/aaai21fb.pdf">Harnessing Social Media to Identify Homeless Youth At-Risk of Substance Use</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Anamika Barman-Adhikari</a>,
+                                    <a>Fei Fang</a>,
+                                    <a>Amulya Yadav</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">AAAI 2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2020" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/back-translation.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2004.03672">Dynamic Data Selection and Weighting for Iterative Back-Translation</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Antonios Anastasopoulos</a>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2020</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="eval" data-year="2020" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/cdevalsumm.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2010.05139">CDEvalSumm: An Empirical Study of Cross-Dataset Evaluation for Neural Summarization Systems</a></h5>
+                                <h6 class="authors">
+                                    <a>Yiran Chen</a>,
+                                    <a>Pengfei Liu</a>,
+                                    <a>Ming Zhong</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Danqing Wang</a>,
+                                    <a>Xipeng Qiu</a>,
+                                    <a>Xuanjing Huang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP-Findings 2020</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="eval" data-year="2020" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/tico-19.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2007.01788">TICO-19: the Translation Initiative for COvid-19</a></h5>
+                                <h6 class="authors">
+                                    <a>Antonios Anastasopoulos</a>,
+                                    <a>Alessandro Cattelan</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Marcello Federico</a>,
+                                    <a>Christian Federman</a>,
+                                    <a>Dmitriy Genzel</a>,
+                                    <a>Francisco Guzmán</a>,
+                                    <a>Junjie Hu</a>,
+                                    <a>Macduff Hughes</a>,
+                                    <a>Philipp Koehn</a>,
+                                    <a>Rosie Lazar</a>,
+                                    <a>Will Lewis</a>,
+                                    <a>Graham Neubig</a>,
+                                    <a>Mengmeng Niu</a>,
+                                    <a>Alp Öktem</a>,
+                                    <a>Eric Paquin</a>,
+                                    <a>Grace Tang</a>,
+                                    <a>Sylwia Tur</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2020 Workshop on NLP-COVID</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2020" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/cross-lingual-summarization.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2006.15454">A Deep Reinforced Model for Zero-Shot Cross-Lingual Summarization with Bilingual Semantic Similarity Rewards</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Sachin Kumar</a>,
+                                    <a>Yulia Tsvetkov</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">ACL 2020 Workshop on Neural Generation and Translation</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/domain-adaptation.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1908.10430">Unsupervised Domain Adaptation for Neural Machine Translation with Domain-Aware Feature Embeddings</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Junjie Hu</a>,
+                                    <a>Antonios Anastasopoulos</a>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2019</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/meta-learning.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1908.10423">Investigating Meta-Learning Algorithms for Low-Resource Natural Language Understanding Tasks</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Keyi Yu</a>,
+                                    <a>Antonios Anastasopoulos</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2019</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/domain-differential-adaptation.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1910.02555">Domain Differential Adaptation for Neural Machine Translation</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Xinyi Wang</a>,
+                                    <a>Junjie Hu</a>,
+                                    <a>Graham Neubig</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2019 Workshop on Neural Generation and Translation</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="eval" data-year="2019" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/compare-mt.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1903.07926">compare-mt: A Tool for Holistic Comparison of Language Generation Systems</a></h5>
+                                <h6 class="authors">
+                                    <a>Graham Neubig</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Junjie Hu</a>,
+                                    <a>Paul Michel</a>,
+                                    <a>Danish Pruthi</a>,
+                                    <a>Xinyi Wang</a>,
+                                    <a>John Wieting</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NAACL 2019</span>
+                                <a style="color:#FF0000">Best Demo Runner-up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/multi-head-attention.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1904.03100">Information Aggregation for Multi-Head Attention</a></h5>
+                                <h6 class="authors">
+                                    <a>Jian Li</a>,
+                                    <a>Baosong Yang</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Xing Wang</a>,
+                                    <a>Michael R. Lyu</a>,
+                                    <a>Zhaopeng Tu</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">NAACL 2019</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/dynamic-layer-aggregation.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/3772">Dynamic Layer Aggregation for Neural Machine Translation with Routing-by-Agreement</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Zhaopeng Tu</a>,
+                                    <a>Xing Wang</a>,
+                                    <a>Longyue Wang</a>,
+                                    <a>Shuming Shi</a>,
+                                    <a>Tong Zhang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">AAAI 2019</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2018" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/neural-translation.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/1810.10181">Exploiting Deep Representations for Neural Machine Translation</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Zhaopeng Tu</a>,
+                                    <a>Xing Wang</a>,
+                                    <a>Shuming Shi</a>,
+                                    <a>Tong Zhang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2018</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2018" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/lexicon-induction.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://aclanthology.org/D18-1062/">Unsupervised Bilingual Lexicon Induction via Latent Variable Models</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Zhi-Hao Zhou</a>,
+                                    <a>Shujian Huang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2018</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2018" data-selected="true">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/dynamic-routing.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Xin_Wang_SkipNet_Learning_Dynamic_ECCV_2018_paper.html">SkipNet: Learning Dynamic Routing in Convolutional Networks</a></h5>
+                                <h6 class="authors">
+                                    <a>Xin Wang</a>,
+                                    <a>Fisher Yu</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Trevor Darrel</a>,
+                                    <a>Joseph E. Gonzalez</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">ECCV 2018</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="nlp" data-year="2017" data-selected="false">
+                    <div class="row">
+                        <!--<div class="col-l col-xs-12 col-lg-3">
+                            <img src="figures/your_image.png" width="100%"/>
+                        </div>-->
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://aclanthology.org/D17-1054/">Capturing User and Product Information for Document-Level Sentiment Analysis with Deep Memory Networks</a></h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2017</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-rest-container">
+            <h5 class="subtitle">Education</h5>
+            <p class="custom-padding">
+               Ph.D. Student in Computer Science. University of California, Los Angeles. Aug. 2020 - Present
+               <br> M.S. in Language Technologies. Carnegie Mellon University. Aug. 2018 - Aug. 2020
+               <br> B.S. in Computer Science, Minor in Statistics. Nanjing University. Sep. 2014 - Jul. 2018
+            </p>
+
+            <h5 class="subtitle">Experience</h5>
+            <p class="custom-padding">
+             Meta AI Research Intern, Jun. 2023 - Sep. 2023
+             <br> Microsoft Research Intern, May 2021 - Aug. 2021 & Jun. 2022 - Sep. 2022
+             <br> Tencent AI Lab Research Intern, Feb. 2018 - Aug. 2018
+            </p>
+
+            <h5 class="subtitle">Service</h5>
+            <p class="custom-padding">
+            Reviewer for ACL, EMNLP, NAACL, ACL Rolling Review, ICML, NeurIPS, ICLR, CVPR, ICCV, AAAI
+            </p>
+            <br>
+          </div>
+
+        </div>
     </div>
-
-    <div class=" my-4 text-left">
-      <h2>Service</h2>
-      <ul>
-        <li>Reviewer for ACL, EMNLP, NAACL, ACL Rolling Review, ICML, NeurIPS, ICLR, CVPR, ICCV, AAAI</li>
-      </ul> 
+    <div id="footer">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <div class="copyright">
+                        Website template from <a href="https://yilundu.github.io/">Yilun Du</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Content Row -->
-    <!-- /.row -->
+</div>
 
-  </div>
-  <!-- /.container -->
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="static/js/jquery.color.min.js"></script>
+<script type="text/javascript">
 
-  <!-- Footer -->
-  <footer class="py-1 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white"></p>
-    </div>
-    <!-- /.container -->
-  </footer>
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+var allPublications = null;
 
+function publicationBySelected() {
+    var a = $("#publication-by-selected")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+
+    $("#main-pub-container .subtitle a").removeClass("activated");
+    $("#main-pub-container .subtitle-aux a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#main-pub-card-container").html("");
+    for (var pubId = 0; pubId < allPublications.length; pubId++) {
+        var pub = $(allPublications[pubId]);
+        if (pub.data("selected") == true) {
+            $("#main-pub-card-container").append(pub);
+        }
+    }
+}
+
+function publicationByDate() {
+    var a = $("#publication-by-date")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+
+    $("#main-pub-container .subtitle a").removeClass("activated");
+    $("#main-pub-container .subtitle-aux a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#main-pub-card-container").html("");
+    for (var pubId = 0; pubId < allPublications.length; pubId++) {
+        if (pubId == 0 || $(allPublications[pubId-1]).data("year") != $(allPublications[pubId]).data("year")) {
+            var year = $(allPublications[pubId]).data("year");
+            $("#main-pub-card-container").append($("<h5 id='year-" + year.toString() + "'>" + year.toString() + "</h5>"));
+        }
+        $("#main-pub-card-container").append(allPublications[pubId]);
+    }
+}
+
+function publicationByTopicInner() {
+    var a = $("#publication-by-topic")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+    $("#main-pub-container .subtitle a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#main-pub-card-container").html("");
+    for (var topicId in allTopics) {
+        var topic = allTopics[topicId].name;
+        var topicTitle = allTopics[topicId].title;
+        // var topicTitle = topic.split("-").map(function (a) { return a[0].toUpperCase() + a.substr(1).toLowerCase(); }).join(" ");
+        $("#main-pub-card-container").append($("<h5 id='topic-" + topic + "'>" + topicTitle + "</h5>"));
+        for (var pubId = 0; pubId < allPublications.length; pubId++) {
+            var pub = $(allPublications[pubId]);
+            if (pub.data("topic").indexOf(topic) != -1) {
+                $("#main-pub-card-container").append(pub);
+            }
+        }
+    }
+}
+
+function publicationByTopicSpecificInner(a) {
+    if ($(a).hasClass("activated")) {
+        return false;
+    }
+
+    $("#main-pub-container .subtitle-aux a").removeClass("activated");
+    $(a).addClass("activated");
+}
+
+function publicationByTopic() {
+    publicationByTopicInner();
+    publicationByTopicSpecificInner($("#main-pub-container .subtitle-aux a:first"));
+    return true;
+}
+
+function publicationByTopicSpecific(a) {
+    publicationByTopicInner();
+    publicationByTopicSpecificInner(a);
+
+    var hash = a.hash;
+    $(hash).prop('id', hash.substr(1) + '-noscroll');
+    window.location.hash = hash;
+    $(hash + '-noscroll').prop('id', hash.substr(1));
+
+    if (!$(hash).isInViewport()) {
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 1000, function(){
+        });
+    }
+
+    return false;
+}
+
+$(function() {
+    getRealSize = function(bgImg) {
+        var img = new Image();
+        img.src = bgImg.attr("src");
+        var width = img.width,
+            height = img.height;
+        return {
+            width: width,
+            height: height
+        }
+    };
+
+    getRealWindowSize = function() {
+        var winWidth = null,
+            winHeight = null;
+        if (window.innerWidth) winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth)) winWidth = document.body.clientWidth;
+        if (window.innerHeight) winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth
+        }
+        return {
+            width: winWidth,
+            height: winHeight
+        }
+    };
+
+    fullBg = function() {
+        var bgImg = $("#background");
+        var mainContainer = $("#main");
+        var firstFire = null;
+
+        function resizeImg() {
+            var realSize = getRealSize(bgImg);
+            var imgWidth = realSize.width;
+            var imgHeight = realSize.height;
+
+            if (imgWidth == 0 || imgHeight == 0) {
+                setTimeout(function() {
+                    resizeImg();
+                }, 200);
+            }
+
+            console.log(realSize);
+            var realWinSize = getRealWindowSize();
+            var winWidth = realWinSize.width;
+            var winHeight = realWinSize.height;
+            var widthRatio = winWidth / imgWidth;
+            var heightRatio = winHeight / imgHeight;
+            console.log(realWinSize);
+            if (widthRatio > heightRatio) {
+                bgImg.width(imgWidth * widthRatio + 'px').height(imgHeight * widthRatio + 'px').css({'top':
+                    -(imgHeight * widthRatio - winHeight) / 10 * 5 + 'px', 'left': '0'})
+            } else {
+                bgImg.width(imgWidth * heightRatio + 'px').height(imgHeight * heightRatio + 'px').css({'left':
+                    -(imgWidth * heightRatio - winWidth) / 10 * 3 + 'px', 'top': '0'})
+            }
+            // mainContainer.css({
+            //     width: winWidth,
+            //     height: winHeight
+            // });
+        }
+
+        resizeImg();
+        window.onresize = function() {
+            if (firstFire === null) {
+                firstFire = setTimeout(function() {
+                    resizeImg();
+                    firstFire = null
+                }, 100)
+            }
+        }
+    };
+
+    targetColor = $("#main-content-container .col-info .name").css("color");
+    animatedLink = function(speed) {
+        $("#main-content-container .col-link li").hover(function() {
+            $(this).find('.icon').animate({
+                color: targetColor,
+                borderColor: targetColor
+            }, speed);
+            $(this).find('.caption').animate({
+                color: targetColor
+            })
+        }, function() {
+            $(this).find('.icon').animate({
+                borderColor: '#cccccc',
+                color: '#cccccc'
+            }, speed);
+            $(this).find('.caption').animate({
+                color: '#cccccc'
+            })
+        })
+    };
+
+    fullBg();
+    animatedLink(400);
+
+    allPublications = $("#main-pub-card-container .pub-card");
+    allTopicsLink = $("#main-pub-container .subtitle-aux a");
+    allTopics = [];
+    for (var topicId = 0; topicId < allTopicsLink.length; topicId++) {
+        allTopics.push({name: $(allTopicsLink[topicId]).data("topic"), title: $(allTopicsLink[topicId]).html()});
+    }
+
+    $("#publication-by-selected").click();
+    // $("#publication-by-date").click();
+    $("#main-pub-card-container").removeClass("hide");
+});
+</script>
 </body>
-
 </html>
