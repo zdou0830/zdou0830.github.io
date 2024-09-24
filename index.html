@@ -157,26 +157,112 @@ a{color:#3955C8}
     <div id="main-more-container">
         <div id="main-bio-container">
             <p>
-                I am a Ph.D. student at the University of California, Los Angeles in <span style="color:#4169E1"><a
-                    href="https://www.cs.ucla.edu/">Computer Science</a></span>. I am fortunate to be advised by Prof. <span
-                  style="color:#4169E1"><a href="https://vnpeng.net/">Nanyun (Violet) Peng</a></span>. My current research is focused on vision-language learning and embodied learning. I am a recipient of the Amazon PhD Fellowship.
+                I am a final-year Ph.D. student in Computer Science at UCLA, under the guidance of Prof. <span style="color:#4169E1"><a href="https://vnpeng.net/">Nanyun (Violet) Peng</a></span>.
+                I earned my M.S. from the Language Technologies Institute at Carnegie Mellon University, where I was advised by Prof. <span style="color:#4169E1"><a href="https://www.phontron.com/">Graham Neubig</a></span>. Prior to that, I obtained my B.S. from the KYM Honors School at Nanjing University.
+            </p>
+            <p>
+                During my Ph.D., my research has centered on vision-language learning. I have worked on pretraining image-language and video-language models, applying them to perception and embodied tasks.
+                Previously, I focused on natural language processing, particularly in the areas of multilingual learning and text generation.            </p>
+            <p>
+                I am a recipient of the Amazon PhD Fellowship and the J.P. Morgan Chase PhD Fellowship.
             </p>
 
         </div>
 
         <div id="main-pub-container">
             <h5 class="subtitle">Publications
-            (<a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();">show selected</a> |
-                <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all by date</a> |
-                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopic();">show all by topic</a>)
+            (<a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();"> show selected</a> |
+                <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all </a> |
+                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopicSpecific(this);" data-topic="multimodal"> show by topic</a>
+            )
             </h5>
             <p class="subtitle-aux"><span class="bold">Topics:</span>
                 <a href="#topic-multimodal" onClick="return publicationByTopicSpecific(this)" data-topic="multimodal">Multimodal Learning</a> |
-                <a href="#topic-nlp" onClick="return publicationByTopicSpecific(this)" data-topic="nlp">Natural Language Processing</a> |
-                <a href="#topic-eval" onClick="return publicationByTopicSpecific(this)" data-topic="eval">Model Evaluation</a>
+                <a href="#topic-eval" onClick="return publicationByTopicSpecific(this)" data-topic="eval">Model Evaluation</a> |
+                <a href="#topic-embodied" onClick="return publicationByTopicSpecific(this)" data-topic="embodied">Embodied Agents</a> |
+                <a href="#topic-multilingual" onClick="return publicationByTopicSpecific(this)" data-topic="multilingual">Multilingual Learning</a> |
+                <a href="#topic-nlp" onClick="return publicationByTopicSpecific(this)" data-topic="nlp">Text Generation</a>
                 <br><span class="note">(* indicates equal contribution)</span>
             </p>
             <div id="main-pub-card-container" class="hide">
+                <div class="pub-card" data-topic="multimodal" data-year="2024" data-selected="true">
+                    <div class="row">
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2408.03567">Unlocking Exocentric Video-Language Data for Egocentric Video Representation Learning</h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Xitong Yang</a>,
+                                    <a>Tushar Nagarajan</a>,
+                                    <a>Huiyu Wang</a>,
+                                    <a>Jing Huang</a>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Kris Kitani</a>,
+                                    <a>Fu-Jen Chu</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">Preprint 2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal" data-year="2024" data-selected="true">
+                    <div class="row">
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://gordonhu608.github.io/mqtllava/">MQT-LLaVA: Matryoshka Query Transformer for Large Vision-Language Models</h5>
+                                <h6 class="authors">
+                                    <a>Wenbo Hu</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Liunian Harold Li</a>,
+                                    <a>Nanyun Peng</a>,
+                                    <a>Kai-Wei Chang</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">Preprint 2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="embodied" data-year="2024" data-selected="true">
+                    <div class="row">
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://arxiv.org/abs/2406.01495">Re-ReST: Reflection-Reinforced Self-Training for Language Agents</h5>
+                                <h6 class="authors">
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Cheng-Fu Yang</a>,
+                                    <a>Xueqing Wu</a>,
+                                    <a>Kai-Wei Chang</a>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">EMNLP 2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="multimodal,eval" data-year="2024" data-selected="false">
+                    <div class="row">
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://gordonhu608.github.io/VALOR-Eval/">VALOR-EVAL: Holistic Coverage and Faithfulness Evaluation of Large Vision-Language Models</h5>
+                                <h6 class="authors">
+                                    <a>Haoyi Qiu*</a>,
+                                    <a>Wenbo Hu*</a>,
+                                    <u>Zi-Yi Dou</u>,
+                                    <a>Nanyun Peng</a>
+                                </h6>
+                                <p class="info">
+                                    <span class="conference">ACL-Findings 2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
@@ -205,7 +291,7 @@ a{color:#3955C8}
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a href="https://x-decoder-vl.github.io/">Generalized Decoding for Pixel, Image, and Language</a></h5>
+                                <h5 class="title"><a href="https://x-decoder-vl.github.io/">X-Decoder: Generalized Decoding for Pixel, Image, and Language</a></h5>
                                 <h6 class="authors">
                                     <a>Xueyan Zou*</a>,
                                     <u>Zi-Yi Dou*</u>,
@@ -229,7 +315,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="false">
+                <div class="pub-card" data-topic="embodied" data-year="2023" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/x-decoder-vl.png" width="100%"/>
@@ -249,14 +335,14 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="multimodal" data-year="2023" data-selected="false">
+                <div class="pub-card" data-topic="multimodal,eval" data-year="2023" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/x-decoder-vl.png" width="100%"/>
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a>ACQUIRED: A Dataset for Answering Counterfactual Questions In Real-Life Videos</a></h5>
+                                <h5 class="title"><a href="https://arxiv.org/abs/2311.01620">ACQUIRED: A Dataset for Answering Counterfactual Questions In Real-Life Videos</a></h5>
                                 <h6 class="authors">
                                     <a>Te-Lin Wu*</a>,
                                     <u>Zi-Yi Dou*</u>,
@@ -274,14 +360,14 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="eval" data-year="2023" data-selected="false">
+                <div class="pub-card" data-topic="multimodal,eval" data-year="2023" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/x-decoder-vl.png" width="100%"/>
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a href="https://arxiv.org/abs/2305.14268">Gender Biases in Automatic Evaluation Metrics: A Case Study on Image Captioning</a></h5>
+                                <h5 class="title"><a href="https://arxiv.org/abs/2305.14711">Gender Biases in Automatic Evaluation Metrics: A Case Study on Image Captioning</a></h5>
                                 <h6 class="authors">
                                     <a>Haoyi Qiu</a>,
                                     <u>Zi-Yi Dou</u>,
@@ -303,7 +389,7 @@ a{color:#3955C8}
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a href="https://ashkamath.github.io/FIBER_page/">Coarse-to-Fine Vision-Language Pre-training with Fusion in the Backbone</a></h5>
+                                <h5 class="title"><a href="https://ashkamath.github.io/FIBER_page/">FIBER: Coarse-to-Fine Vision-Language Pre-training with Fusion in the Backbone</a></h5>
                                 <h6 class="authors">
                                     <u>Zi-Yi Dou*</u>,
                                     <a>Aishwarya Kamath*</a>,
@@ -325,7 +411,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="multimodal" data-year="2022" data-selected="false">
+                <div class="pub-card" data-topic="multimodal,embodied" data-year="2022" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/vision-language.png" width="100%"/>
@@ -351,7 +437,7 @@ a{color:#3955C8}
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a href="https://arxiv.org/abs/2111.02387">An Empirical Study of Training End-to-End Vision-and-Language Transformers</a></h5>
+                                <h5 class="title"><a href="https://arxiv.org/abs/2111.02387">METER: An Empirical Study of Training End-to-End Vision-and-Language Transformers</a></h5>
                                 <h6 class="authors">
                                     <u>Zi-Yi Dou</u>,
                                     <a>Yichong Xu</a>,
@@ -360,6 +446,8 @@ a{color:#3955C8}
                                     <a>Shuohang Wang</a>,
                                     <a>Lijuan Wang</a>,
                                     <a>Chenguang Zhu</a>,
+                                    <a>Pengchuan Zhang</a>,
+                                    <a>Lu Yuan</a>,
                                     <a>Nanyun Peng</a>,
                                     <a>Zicheng Liu</a>,
                                     <a>Michael Zeng</a>
@@ -390,11 +478,8 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="multimodal" data-year="2021" data-selected="false">
+                <!--<div class="pub-card" data-topic="multimodal" data-year="2021" data-selected="false">
                     <div class="row">
-                        <!--<div class="col-l col-xs-12 col-lg-3">
-                            <img src="figures/vision-language.png" width="100%"/>
-                        </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
                                 <h5 class="title"><a href="https://aclanthology.org/2021.emnlp-main.513/">Improving Pre-trained Vision-and-Language Embeddings for Phrase Grounding</a></h5>
@@ -408,7 +493,7 @@ a{color:#3955C8}
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="pub-card" data-topic="eval" data-year="2021" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
@@ -429,20 +514,20 @@ a{color:#3955C8}
                                     <a>Graham Neubig</a>
                                 </h6>
                                 <p class="info">
-                                    <span class="conference">ACL 2021 Demo</span>
+                                    <span class="conference">ACL 2021 Demo</span> <a style="color:#FF0000">Best Demo</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="true">
+                <div class="pub-card" data-topic="multilingual" data-year="2021" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/word-alignment.png" width="100%"/>
                         </div>-->
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
-                                <h5 class="title"><a href="https://arxiv.org/abs/2101.08231">Word Alignment by Fine-tuning Embeddings on Parallel Corpora</a></h5>
+                                <h5 class="title"><a href="https://arxiv.org/abs/2101.08231">awesome-align: Word Alignment by Fine-tuning Embeddings on Parallel Corpora</a></h5>
                                 <h6 class="authors">
                                     <u>Zi-Yi Dou</u>,
                                     <a>Graham Neubig</a>
@@ -496,7 +581,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2021" data-selected="false">
+                <div class="pub-card" data-topic="" data-year="2021" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/social-media.png" width="100%"/>
@@ -517,7 +602,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2020" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2020" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/back-translation.png" width="100%"/>
@@ -537,7 +622,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="eval" data-year="2020" data-selected="false">
+                <div class="pub-card" data-topic="nlp,eval" data-year="2020" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/cdevalsumm.png" width="100%"/>
@@ -561,7 +646,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="eval" data-year="2020" data-selected="false">
+                <div class="pub-card" data-topic="multilingual,eval" data-year="2020" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/tico-19.png" width="100%"/>
@@ -616,7 +701,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2019" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/domain-adaptation.png" width="100%"/>
@@ -637,7 +722,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                <div class="pub-card" data-topic="" data-year="2019" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/meta-learning.png" width="100%"/>
@@ -657,7 +742,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2019" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/domain-differential-adaptation.png" width="100%"/>
@@ -678,7 +763,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="eval" data-year="2019" data-selected="true">
+                <div class="pub-card" data-topic="nlp,eval" data-year="2019" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/compare-mt.png" width="100%"/>
@@ -702,7 +787,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2019" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/multi-head-attention.png" width="100%"/>
@@ -725,7 +810,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2019" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2019" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/dynamic-layer-aggregation.png" width="100%"/>
@@ -748,7 +833,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2018" data-selected="true">
+                <div class="pub-card" data-topic="multilingual" data-year="2018" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/neural-translation.png" width="100%"/>
@@ -770,7 +855,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2018" data-selected="false">
+                <div class="pub-card" data-topic="multilingual" data-year="2018" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/lexicon-induction.png" width="100%"/>
@@ -790,7 +875,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="multimodal" data-year="2018" data-selected="true">
+                <div class="pub-card" data-topic="" data-year="2018" data-selected="true">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/dynamic-routing.png" width="100%"/>
@@ -812,7 +897,7 @@ a{color:#3955C8}
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="nlp" data-year="2017" data-selected="false">
+                <div class="pub-card" data-topic="" data-year="2017" data-selected="false">
                     <div class="row">
                         <!--<div class="col-l col-xs-12 col-lg-3">
                             <img src="figures/your_image.png" width="100%"/>
@@ -832,7 +917,44 @@ a{color:#3955C8}
                 </div>
             </div>
         </div>
+
+
+
         <div id="main-rest-container">
+            <h5 class="subtitle">Internships</h5>
+        <div>
+            <p class="custom-padding" style="margin-bottom: 4px;">
+                Meta AI, 06/2024-09/2024
+            </p>
+            <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
+                Research Intern at FAIR Perception
+            </p>
+        </div>
+        <div>
+            <p class="custom-padding" style="margin-bottom: 4px;">
+                Meta AI, 06/2023-09/2023
+            </p>
+            <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
+                Research Intern at FAIR Multimodal Foundations
+            </p>
+        </div>
+        <div>
+            <p class="custom-padding" style="margin-bottom: 4px;">
+                Microsoft, 05/2021-08/2021 & 06/2022-09/2022
+            </p>
+            <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
+                Research Intern at Project Florence-Vision and Language
+            </p>
+        </div>
+        <div>
+            <p class="custom-padding" style="margin-bottom: 4px;">
+                Tencent AI Lab, 02/2018-08/2018
+            </p>
+            <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
+                Research Intern at the Machine Translation Team
+            </p>
+        </div>
+
             <h5 class="subtitle">Education</h5>
             <div>
                 <p class="custom-padding" style="margin-bottom: 4px;">
@@ -860,35 +982,12 @@ a{color:#3955C8}
             </div>
 
 
-            <h5 class="subtitle">Experience</h5>
-            <div>
-                <p class="custom-padding" style="margin-bottom: 4px;">
-                    Meta AI, 06/2023-09/2023
-                </p>
-                <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                    Research Intern at FAIR Multimodal Foundations
-                </p>
-            </div>
-            <div>
-                <p class="custom-padding" style="margin-bottom: 4px;">
-                    Microsoft, 05/2021-08/2021 & 06/2022-09/2022
-                </p>
-                <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                    Research Intern at Project Florence-Vision and Language
-                </p>
-            </div>
-            <div>
-                <p class="custom-padding" style="margin-bottom: 4px;">
-                    Tencent AI Lab, 02/2018-08/2018
-                </p>
-                <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                    Research Intern at the Machine Translation Team
-                </p>
-            </div>
+
 
             <h5 class="subtitle">Service</h5>
             <p class="custom-padding">
-            Reviewer for ACL, EMNLP, NAACL, ACL Rolling Review, ICML, NeurIPS, ICLR, CVPR, ICCV, AAAI
+            Area Chair for ACL, EMNLP, ACL Rolling Review <br>
+            Reviewer for ACL, EMNLP, NAACL, ACL Rolling Review, ICML, NeurIPS, ICLR, CVPR, ICCV, ECCV, AAAI
             </p>
             <br>
           </div>
@@ -966,62 +1065,35 @@ function publicationByDate() {
     }
 }
 
-function publicationByTopicInner() {
-    var a = $("#publication-by-topic")
-    if (a.hasClass("activated")) {
-        return ;
-    }
-    $("#main-pub-container .subtitle a").removeClass("activated");
-    a.addClass("activated");
+function publicationByTopicSpecific(a) {
 
-    $("#main-pub-card-container").html("");
-    for (var topicId in allTopics) {
-        var topic = allTopics[topicId].name;
-        var topicTitle = allTopics[topicId].title;
-        // var topicTitle = topic.split("-").map(function (a) { return a[0].toUpperCase() + a.substr(1).toLowerCase(); }).join(" ");
-        $("#main-pub-card-container").append($("<h5 id='topic-" + topic + "'>" + topicTitle + "</h5>"));
-        for (var pubId = 0; pubId < allPublications.length; pubId++) {
-            var pub = $(allPublications[pubId]);
-            if (pub.data("topic").indexOf(topic) != -1) {
-                $("#main-pub-card-container").append(pub);
-            }
-        }
-    }
-}
-
-function publicationByTopicSpecificInner(a) {
     if ($(a).hasClass("activated")) {
         return false;
     }
 
+
+    $("#main-pub-container .subtitle a").removeClass("activated");
     $("#main-pub-container .subtitle-aux a").removeClass("activated");
     $(a).addClass("activated");
-}
 
-function publicationByTopic() {
-    publicationByTopicInner();
-    publicationByTopicSpecificInner($("#main-pub-container .subtitle-aux a:first"));
-    return true;
-}
+    var b = $("#publication-by-topic")
+    b.addClass("activated");
 
-function publicationByTopicSpecific(a) {
-    publicationByTopicInner();
-    publicationByTopicSpecificInner(a);
-
-    var hash = a.hash;
-    $(hash).prop('id', hash.substr(1) + '-noscroll');
-    window.location.hash = hash;
-    $(hash + '-noscroll').prop('id', hash.substr(1));
-
-    if (!$(hash).isInViewport()) {
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 1000, function(){
-        });
+    const topic = a.getAttribute('data-topic');
+    if ($("#main-pub-container .subtitle-aux a:first").attr('data-topic') === topic) {
+        $("#main-pub-container .subtitle-aux a:first").addClass("activated");
     }
 
+    $("#main-pub-card-container").html("");
+    for (var pubId = 0; pubId < allPublications.length; pubId++) {
+        var pub = $(allPublications[pubId]);
+        if (pub.data("topic").indexOf(topic) != -1) {
+            $("#main-pub-card-container").append(pub);
+        }
+    }
     return false;
 }
+
 
 $(function() {
     getRealSize = function(bgImg) {
@@ -1130,8 +1202,9 @@ $(function() {
         allTopics.push({name: $(allTopicsLink[topicId]).data("topic"), title: $(allTopicsLink[topicId]).html()});
     }
 
-    $("#publication-by-selected").click();
+    // $("#publication-by-selected").click();
     // $("#publication-by-date").click();
+    publicationBySelected();
     $("#main-pub-card-container").removeClass("hide");
 });
 </script>
