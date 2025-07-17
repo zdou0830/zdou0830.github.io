@@ -157,34 +157,40 @@ a{color:#3955C8}
     <div id="main-more-container">
         <div id="main-bio-container">
             <p>
-                I am a final-year Ph.D. student in Computer Science at UCLA, under the guidance of Prof. <span style="color:#4169E1"><a href="https://violetpeng.github.io/">Nanyun (Violet) Peng</a></span>.
-                I earned my M.S. from the Language Technologies Institute at Carnegie Mellon University, where I was advised by Prof. <span style="color:#4169E1"><a href="https://www.phontron.com/">Graham Neubig</a></span>. Prior to that, I obtained my B.S. from the KYM Honors School at Nanjing University.
+                I am a Research Scientist at Apple AI/ML, working on multimodal learning for Apple Foundation Models. I completed my Ph.D. in Computer Science at UCLA, advised by Prof. <a href="https://violetpeng.github.io/" style="color:#4169E1">Nanyun (Violet) Peng</a>, focusing on multimodal learning. During my Ph.D., I received the Amazon PhD Fellowship and the JPMC PhD Fellowship. I earned my M.S. at Carnegie Mellon University under Prof. <a href="https://www.phontron.com/" style="color:#4169E1">Graham Neubig</a>, specializing in NLP, and my B.S. from the KYM Honors School at Nanjing University.
             </p>
             <p>
-                During my Ph.D., my research has centered on vision-language learning. I have worked on pretraining image-language and video-language models, applying them to perception and embodied tasks.
-                Previously, I focused on natural language processing, particularly in the areas of multilingual learning and text generation.            </p>
-            <p>
-                I am a recipient of the Amazon PhD Fellowship and the J.P. Morgan Chase PhD Fellowship.
-            </p>
 
         </div>
 
         <div id="main-pub-container">
             <h5 class="subtitle">Publications
-            (<a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();"> show selected</a> |
+            (<a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();"> show selected</a> <!--|
                 <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all </a> |
-                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopicSpecific(this);" data-topic="multimodal"> show by topic</a>
+                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopicSpecific(this);" data-topic="multimodal"> show by topic</a> -->
             )
             </h5>
-            <p class="subtitle-aux"><span class="bold">Topics:</span>
+            <!-- <p class="subtitle-aux"><span class="bold">Topics:</span>
                 <a href="#topic-multimodal" onClick="return publicationByTopicSpecific(this)" data-topic="multimodal">Multimodal Learning</a> |
                 <a href="#topic-eval" onClick="return publicationByTopicSpecific(this)" data-topic="eval">Model Evaluation</a> |
                 <a href="#topic-embodied" onClick="return publicationByTopicSpecific(this)" data-topic="embodied">Embodied Agents</a> |
                 <a href="#topic-multilingual" onClick="return publicationByTopicSpecific(this)" data-topic="multilingual">Multilingual Learning</a> |
                 <a href="#topic-nlp" onClick="return publicationByTopicSpecific(this)" data-topic="nlp">Text Generation</a>
                 <br><span class="note">(* indicates equal contribution)</span>
-            </p>
+            </p> -->
             <div id="main-pub-card-container" class="hide">
+                <div class="pub-card" data-topic="multimodal" data-year="2024" data-selected="true">
+                    <div class="row">
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title"><a href="https://machinelearning.apple.com/papers/apple_intelligence_foundation_language_models_tech_report_2025.pdf">Apple Intelligence Foundation Language Models 2025</h5>
+                                <p class="info">
+                                    <span class="conference">Tech Report 2025</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="pub-card" data-topic="multimodal" data-year="2024" data-selected="true">
                     <div class="row">
                         <div class="col-r col-xs-12 col-lg-9">
@@ -280,7 +286,6 @@ a{color:#3955C8}
                                 </h6>
                                 <p class="info">
                                     <span class="conference">NeurIPS 2023</span>
-                                <a href="https://www.omnilabel.org/" style="color:#FF0000">CVPR 2023 OmniLabel Challenge Winner (1st place)</a></p>
                             </div>
                         </div>
                     </div>
@@ -922,21 +927,29 @@ a{color:#3955C8}
 
 
         <div id="main-rest-container">
-            <h5 class="subtitle">Internships</h5>
+            <h5 class="subtitle">Experience</h5>
         <div>
             <p class="custom-padding" style="margin-bottom: 4px;">
-                Meta AI, 06/2024-09/2024
+                Apple AI/ML, 01/2025-
             </p>
             <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                Research Intern at FAIR Perception
+                Research Scientist at the Multimodal Foundation Model team
             </p>
         </div>
         <div>
             <p class="custom-padding" style="margin-bottom: 4px;">
-                Meta AI, 06/2023-09/2023
+                Meta AI, 06/2024-10/2024
             </p>
             <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                Research Intern at FAIR Multimodal Foundations
+                Research Intern with the Segment Anything (SAM) team at FAIR Perception
+            </p>
+        </div>
+        <div>
+            <p class="custom-padding" style="margin-bottom: 4px;">
+                Meta AI, 06/2023-12/2023
+            </p>
+            <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
+                Research Intern with the Ego4D team at FAIR Multimodal Foundations
             </p>
         </div>
         <div>
@@ -959,10 +972,10 @@ a{color:#3955C8}
             <h5 class="subtitle">Education</h5>
             <div>
                 <p class="custom-padding" style="margin-bottom: 4px;">
-                    University of California, Los Angeles, 08/2020-Present
+                    University of California, Los Angeles, 08/2020-01/2025
                 </p>
                 <p class="custom-padding" style="font-weight: 400; color: #666666; margin-bottom: 4px; line-height: 1.4; margin-bottom: 10px;">
-                    Ph.D. Student in Computer Science
+                    Ph.D. in Computer Science
                 </p>
             </div>
             <div>
